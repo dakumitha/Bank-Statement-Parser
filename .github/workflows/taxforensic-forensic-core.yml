@@ -21,7 +21,7 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Compile forensic core and tests
-        run: python -m compileall -q src/taxforensic_forensic_core.py tests/test_forensic_core.py
-      - name: Run deterministic forensic tests
-        run: python -m unittest discover -s tests -p "test_forensic_core.py" -v
+      - name: Compile forensic modules and tests
+        run: python -m compileall -q src tests
+      - name: Run deterministic test suite
+        run: python -m unittest discover -s tests -p "test_*.py" -v
